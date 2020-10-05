@@ -40,42 +40,42 @@ class SPEI (object):
         return speiData
 
 
-##def main():
-##    from  util import readcsv,write
-##    import sys
-##    if  len(sys.argv) >=7:
-##        script = sys.argv[0]
-##        infile = sys.argv[1]
-##        rainCol ,Tcol,dateCol= sys.argv[2], sys.argv[3],sys.argv[4]
-##        lat, outfile ,scales= sys.argv[5], sys.argv[6],sys.argv[7:]
-##        scales=map(int,scales)
-##        data=readcsv(infile)
-##        rain, tmean, date=data[rainCol],data[Tcol],data[dateCol]
-##        myspei=SPEI(date,rain, tmean, latDeg=lat ,scales=scales)
-##        myspeic=myspei.calculate(fit=util.LLfit)
-##        print(myspeic.keys())
-##        util.write(myspeic,outfile)
-##        print ('spei is calcualted and saved in {}'.format(outfile))
-##    else:
-##        print ("\nUsage: spei  <infile> <RAIN col> <Tmean col> <date col>\
-##<latitude> <outfile> <scales>\n")
-##        print ("Example: spei  data/wichita.csv  PRCP TMED date 37.6475 data/outspei.csv 1 3 6 9 12 24")
-##        #sys.exit(2)
-##if __name__ == '__main__':
-##    main()
+def main():
+    from  util import readcsv,write
+    import sys
+    if  len(sys.argv) >=7:
+        script = sys.argv[0]
+        infile = sys.argv[1]
+        rainCol ,Tcol,dateCol= sys.argv[2], sys.argv[3],sys.argv[4]
+        lat, outfile ,scales= sys.argv[5], sys.argv[6],sys.argv[7:]
+        scales=map(int,scales)
+        data=readcsv(infile)
+        rain, tmean, date=data[rainCol],data[Tcol],data[dateCol]
+        myspei=SPEI(date,rain, tmean, latDeg=lat ,scales=scales)
+        myspeic=myspei.calculate(fit=util.LLfit)
+        print(myspeic.keys())
+        util.write(myspeic,outfile)
+        print ('spei is calcualted and saved in {}'.format(outfile))
+    else:
+        print ("\nUsage: spei  <infile> <RAIN col> <Tmean col> <date col>\
+<latitude> <outfile> <scales>\n")
+        print ("Example: spei  data/wichita.csv  PRCP TMED date 37.6475 data/outspei.csv 1 3 6 9 12 24")
+        #sys.exit(2)
+if __name__ == '__main__':
+    main()
   
-import util
-infile="data/wichita.csv"#gorgandata.csv" lat=54.432922
-data=util.readcsv(infile)
-print(data.keys())
-scale=[1,3,6,12]
-##    for i , j in zip(data["tmin"], data["tmax"]):
-##        data["TMED"].append((i+j)/2)
-##        'Date', 'RAIN', 'Tmean'
-rain, tmean, date=data["PRCP"],data["TMED"],data["date"]
-myspei=SPEI(date,rain, tmean, latDeg=37.6475 ,scales=scale)
-myspeic=myspei.calculate(fit=util.LLfit)
-util.write(myspeic,infile.replace(".csv", "spei2.csv"))
-##        
+##import util
+##infile="data/wichita.csv"#gorgandata.csv" lat=54.432922
+##data=util.readcsv(infile)
+##print(data.keys())
+##scale=[1,3,6,12]
+####    for i , j in zip(data["tmin"], data["tmax"]):
+####        data["TMED"].append((i+j)/2)
+####        'Date', 'RAIN', 'Tmean'
+##rain, tmean, date=data["PRCP"],data["TMED"],data["date"]
+##myspei=SPEI(date,rain, tmean, latDeg=37.6475 ,scales=scale)
+##myspeic=myspei.calculate(fit=util.LLfit)
+##util.write(myspeic,infile.replace(".csv", "spei2.csv"))
+####        
 
             

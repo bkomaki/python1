@@ -1,1 +1,9 @@
 
+ This is needed to calculate SPEI; this table includes thsese columns namely  date,PRCP,TMAX,TMIN,TMED,AWND,TSUN and  ACSH,
+ PRCP: monthly precipitation totals(mm)
+ TMAX:monthly mean daily maximum temperature(ºC)
+ TMIN:monthly mean daily minimum temperature (ºC)
+TMED:monthly mean temperature(ºC)
+AWND:monthly mean wind speed (km/h)
+TSUN:monthly mean sun hours (h)
+ACSH:monthly mean cloud cover(%)

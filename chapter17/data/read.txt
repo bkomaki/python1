@@ -7,3 +7,5 @@ TMED:monthly mean temperature(ºC)
 AWND:monthly mean wind speed (km/h)
 TSUN:monthly mean sun hours (h)
 ACSH:monthly mean cloud cover(%)
+
+you also need latitude of the place, equals to lat=37.6475.
